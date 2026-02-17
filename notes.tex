@@ -1,0 +1,228 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{amsmath, amssymb, amsfonts, physics, braket, mathtools, bigints, geometry}
+\usepackage{amsthm}
+\usepackage{pgfplots, subcaption, floatrow, footnote, adjustbox,float,fancyvrb, colonequals}
+\usepackage{graphicx, grffile, epsfig, listings}
+\usepackage{verbatim, dsfont, accents}
+\usepackage{textcomp}
+\usepackage{pdfpages}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[toc,page]{appendix}
+\usepackage{authblk}
+\usepackage[bookmarksnumbered=true]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing, patterns}
+
+\usepackage{capt-of, caption} %for captions in minipages
+% \usepackage[capitalise]{cleveref}
+% \crefname{equation}{}{}
+% \usepackage[textsize=footnotesize,textwidth=2.7cm]{todonotes}
+% \usepackage[color]{showkeys}
+
+\numberwithin{equation}{section}
+\setcounter{tocdepth}{1}
+\renewcommand\Affilfont{\itshape\footnotesize}
+
+
+
+
+
+\title{Notes}
+
+%\author[1,*,***]{Niels Benedikter}
+%\author[2,**]{Sascha Lill}
+\author[3,*]{Diwakar Naidu}
+%\affil[1]{ORCID: \href{https://orcid.org/0000-0002-1071-6091}{0000-0002-1071-6091}, e--mail: \href{mailto:niels.benedikter@unimi.it}{niels.benedikter@unimi.it}}
+%\affil[2]{ORCID: \href{https://orcid.org/0000-0002-9474-9914}{0000-0002-9474-9914}, e--mail: \href{mailto:sali@math.ku.dk}{sali@math.ku.dk}}
+%\affil[3]{ORCID: \href{https://orcid.org/0009-0000-5567-4529}{0009-0000-5567-4529}, e--mail: \href{mailto:diwakar.naidu@unimi.it}{diwakar.naidu@unimi.it}}
+%\affil[*]{Università degli Studi di Milano, Via Cesare Saldini 50, 20133 Milano, Italy}
+%\affil[**]{University of Copenhagen, Universitetsparken 5, DK-2100 Copenhagen, Denmark}
+%\affil[***]{External Scientific Member of Basque Center for Applied Mathematics, Alameda de Mazarredo 14, 48009 Bilbao, Bizkaia, Spain}
+
+\addtolength{\textwidth}{2.0cm}
+\addtolength{\hoffset}{-1.0cm}
+\addtolength{\textheight}{2.4cm}
+\addtolength{\voffset}{-1.5cm} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bA}{\boldsymbol{A}}
+\newcommand{\bB}{\boldsymbol{B}}
+\newcommand{\bC}{\boldsymbol{C}}
+\newcommand{\bD}{\boldsymbol{D}}
+\newcommand{\bE}{\boldsymbol{E}}
+\newcommand{\bF}{\boldsymbol{F}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fC}{\mathfrak{C}}
+\newcommand{\fR}{\mathfrak{R}}
+
+\newcommand{\CCC}{\mathbb{C}}
+\newcommand{\NNN}{\mathbb{N}}
+\newcommand{\RRR}{\mathbb{R}}
+\newcommand{\TTT}{\mathbb{T}}
+\newcommand{\ZZZ}{\mathbb{Z}}
+\newcommand{\Zbb}{\mathbb{Z}}
+
+\newcommand{\ulambda}{\underline{\lambda}}
+
+\newcommand{\1}{\mathbb{I}}
+\renewcommand{\a}{\textnormal{a}}
+\newcommand{\ad}{\mathrm{ad}}
+\renewcommand{\b}{\textnormal{b}}
+\newcommand{\Bog}{\textnormal{Bog}}
+\newcommand{\corr}{\textnormal{corr}}
+\newcommand{\Coul}{\textnormal{Coul}}
+\renewcommand{\d}{\textnormal{d}}
+\newcommand{\di}{\textnormal{d}}
+\newcommand{\DV}{\mathrm{DV}}
+\newcommand{\diam}{\mathrm{diam}}
+\newcommand{\eff}{\mathrm{eff}}
+\newcommand{\ex}{\mathrm{ex}}
+\newcommand{\F}{\mathrm{F}}
+\newcommand{\FS}{\mathrm{FS}}
+\newcommand{\GS}{\mathrm{gs}}
+\newcommand{\HF}{\mathrm{HF}}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\I}{\mathrm{I}}
+\newcommand{\II}{\mathrm{II}}
+\newcommand{\III}{\mathrm{III}}
+\newcommand{\IV}{\mathrm{IV}}
+\newcommand{\V}{\mathrm{V}}
+\newcommand{\IIa}{\mathrm{IIa}}
+\newcommand{\IIb}{\mathrm{IIb}}
+\newcommand{\IIc}{\mathrm{IIc}}
+\newcommand{\IId}{\mathrm{IId}}
+\renewcommand{\Im}{\mathrm{Im}}
+\newcommand{\nor}{\mathrm{nor}}
+\renewcommand{\Re}{\mathrm{Re}}
+\newcommand{\RPA}{\mathrm{RPA}}
+\newcommand{\SR}{\mathrm{SR}}
+\newcommand{\supp}{\mathrm{supp}}
+\newcommand{\trial}{\mathrm{trial}}
+\newcommand{\kF}{k_\F}
+\newcommand{\BF}{B_\F}
+\newcommand{\BFc}{B_\F^c}
+\newcommand{\Ik}{\mathcal{I}_k}
+\newcommand{\north}{\Gamma^{\textnormal{nor}}}
+\newcommand{\fock}{\mathcal{F}}
+\newcommand{\Ncal}{\mathcal{N}}
+\newcommand{\Ecal}{\mathcal{E}}
+\newcommand{\Nbb}{\mathbb{N}}
+\newcommand{\Ical}{\mathcal{I}}
+\newcommand{\Ccal}{\mathcal{C}}
+\newcommand{\Cbb}{\mathbb{C}}
+\newcommand{\tagg}[1]{ \stepcounter{equation} \tag{\theequation}
+	\label{#1} } % add tag and label in align*-environments
+
+\newcommand{\Zstar}{\mathbb{Z}^3} %Make this \Z^3 \setminus \{0\} if needed.
+
+\newcommand{\Rbb}{\mathbb{R}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\T}{\mathbb{T}}
+
+\newcommand{\QQ}{\mathcal{Q}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\Hcal}{\mathcal{H}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\KK}{\mathcal{K}}
+\newcommand{\NN}{\mathcal{N}}
+
+\newcommand{\SH}{\mathscr{H}}
+\newcommand{\Psis}{\Psi^*}
+\newcommand{\bint}{\bigintssss}
+\newcommand\Item[1][]{%
+	\ifx\relax#1\relax  \item \else \item[#1] \fi
+	\abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\dg}{^\dagger}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\eva}[1]{\left\langle #1 \right\rangle}
+\newcommand{\bracket}[2]{\left\langle #1 | #2 \right\rangle}
+\renewcommand{\det}[1]{\mathrm{det}\left( #1 \right)}
+\newcommand{\del}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\fulld}[1]{\frac{d}{d #1}}
+\newcommand{\fulldd}[2]{\frac{d #1}{d #2}}
+\newcommand{\dell}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\delltwo}[2]{\frac{\partial^2 #1}{\partial #2 ^2}}  
+\newcommand{\com}[1]{\left[ #1 \right]}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\normmax}[1]{\norm{#1}_{\max}}
+\newcommand{\normmaxi}[1]{\norm{#1}_{\mathrm{max,1}}}
+\newcommand{\normmaxii}[1]{\norm{#1}_{\mathrm{max,2}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMSTYLES
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{example}[theorem]{Example}
+\newtheorem*{remarks}{Remarks}
+
+\theoremstyle{remark}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{remark}[theorem]{Remark}
+
+% UNNUMBERED VERSIONS
+\theoremstyle{plain}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{proposition*}{Proposition}
+
+
+\theoremstyle{definition}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{assumption*}{Assumption}
+\newtheorem*{example*}{Example}
+
+\theoremstyle{remark}
+\newtheorem*{claim*}{Claim}
+\newtheorem*{remark*}{Remark}
+
+
+
+
+\begin{document}
+	\maketitle
+	\begin{abstract}
+		hello world
+		
+		\medskip
+		
+		\noindent Key words: random phase approximation, quantum liquids, bosonization
+		
+		\medskip
+		
+		\noindent {\textit{05}}
+	\end{abstract}
+	
+	
+	
+	
+\end{document}
