@@ -27,21 +27,10 @@
 \setcounter{tocdepth}{1}
 \renewcommand\Affilfont{\itshape\footnotesize}
 
-
-
-
-
 \title{Notes}
-
-%\author[1,*,***]{Niels Benedikter}
-%\author[2,**]{Sascha Lill}
-\author[3,*]{Diwakar Naidu}
-%\affil[1]{ORCID: \href{https://orcid.org/0000-0002-1071-6091}{0000-0002-1071-6091}, e--mail: \href{mailto:niels.benedikter@unimi.it}{niels.benedikter@unimi.it}}
-%\affil[2]{ORCID: \href{https://orcid.org/0000-0002-9474-9914}{0000-0002-9474-9914}, e--mail: \href{mailto:sali@math.ku.dk}{sali@math.ku.dk}}
+\author[1,*]{DN}
 %\affil[3]{ORCID: \href{https://orcid.org/0009-0000-5567-4529}{0009-0000-5567-4529}, e--mail: \href{mailto:diwakar.naidu@unimi.it}{diwakar.naidu@unimi.it}}
 %\affil[*]{Università degli Studi di Milano, Via Cesare Saldini 50, 20133 Milano, Italy}
-%\affil[**]{University of Copenhagen, Universitetsparken 5, DK-2100 Copenhagen, Denmark}
-%\affil[***]{External Scientific Member of Basque Center for Applied Mathematics, Alameda de Mazarredo 14, 48009 Bilbao, Bizkaia, Spain}
 
 \addtolength{\textwidth}{2.0cm}
 \addtolength{\hoffset}{-1.0cm}
@@ -79,8 +68,6 @@
 \newcommand{\ulambda}{\underline{\lambda}}
 
 \newcommand{\1}{\mathbb{I}}
-\renewcommand{\a}{\textnormal{a}}
-\newcommand{\ad}{\mathrm{ad}}
 \renewcommand{\b}{\textnormal{b}}
 \newcommand{\Bog}{\textnormal{Bog}}
 \newcommand{\corr}{\textnormal{corr}}
@@ -101,10 +88,6 @@
 \newcommand{\III}{\mathrm{III}}
 \newcommand{\IV}{\mathrm{IV}}
 \newcommand{\V}{\mathrm{V}}
-\newcommand{\IIa}{\mathrm{IIa}}
-\newcommand{\IIb}{\mathrm{IIb}}
-\newcommand{\IIc}{\mathrm{IIc}}
-\newcommand{\IId}{\mathrm{IId}}
 \renewcommand{\Im}{\mathrm{Im}}
 \newcommand{\nor}{\mathrm{nor}}
 \renewcommand{\Re}{\mathrm{Re}}
@@ -116,14 +99,6 @@
 \newcommand{\BF}{B_\F}
 \newcommand{\BFc}{B_\F^c}
 \newcommand{\Ik}{\mathcal{I}_k}
-\newcommand{\north}{\Gamma^{\textnormal{nor}}}
-\newcommand{\fock}{\mathcal{F}}
-\newcommand{\Ncal}{\mathcal{N}}
-\newcommand{\Ecal}{\mathcal{E}}
-\newcommand{\Nbb}{\mathbb{N}}
-\newcommand{\Ical}{\mathcal{I}}
-\newcommand{\Ccal}{\mathcal{C}}
-\newcommand{\Cbb}{\mathbb{C}}
 \newcommand{\tagg}[1]{ \stepcounter{equation} \tag{\theequation}
 	\label{#1} } % add tag and label in align*-environments
 
@@ -138,6 +113,7 @@
 \newcommand{\T}{\mathbb{T}}
 
 \newcommand{\QQ}{\mathcal{Q}}
+\newcommand{\h}{\mathfrak{h}}
 \newcommand{\HH}{\mathcal{H}}
 \newcommand{\Hcal}{\mathcal{H}}
 \newcommand{\LL}{\mathcal{L}}
@@ -210,19 +186,22 @@
 
 \begin{document}
 	\maketitle
-	\begin{abstract}
-		hello world
-		
-		\medskip
-		
-		\noindent Key words: random phase approximation, quantum liquids, bosonization
-		
-		\medskip
-		
-		\noindent {\textit{05}}
-	\end{abstract}
-	
-	
-	
+	\medskip
+---------- Here comes a Pedagogical review----------		
+
+This is an introduction to the relevant concepts from the quantum mechanical theory of many body systems.
+\section{Introduction}	
+Consider a system of $N$ particles described on Hilbert spaces $\h_1,\ldots,\h_N$ with Hamilton operators $h_1,\ldots,h_N$. The combined system of these particles is decribed on the Hilbert space that results from the tensor product of these one particle Hilbert spaces, that is 
+\begin{equation}
+	\HH_N = \h_1\otimes\cdots\otimes\h_N
+\end{equation}
+Each of the Hamilton operators $h_1,\ldots,h_N$ can be extended to the tensor product spaces as
+\begin{equation}
+	\h_1 \otimes\1\otimes\cdots\otimes\1,\quad \1\otimes h_2\otimes\cdots\otimes\1,\quad \1\otimes\cdots\otimes \1 \otimes\h_N
+\end{equation}
+In the case of free or non-interacting particles, the combined Hamilton operator for the system is $H_N^0 = h_1+h_2\ldots+h_N$ defined on the domain
+\begin{equation}
+	D(H_N^0) = \mathrm{span}\{\phi_1\otimes\ldots\otimes\phi_N | \phi_1 \in D(\h_1), \dots, \phi_N \in D(\h_N)\}
+\end{equation}
 	
 \end{document}
