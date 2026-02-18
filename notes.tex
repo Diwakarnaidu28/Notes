@@ -115,7 +115,7 @@
 \newcommand{\QQ}{\mathcal{Q}}
 \newcommand{\h}{\mathfrak{h}}
 \newcommand{\HH}{\mathcal{H}}
-\newcommand{\Hcal}{\mathcal{H}}
+\newcommand{\FF}{\mathcal{F}}
 \newcommand{\LL}{\mathcal{L}}
 \newcommand{\KK}{\mathcal{K}}
 \newcommand{\NN}{\mathcal{N}}
@@ -191,7 +191,7 @@
 
 This is an introduction to the relevant concepts from the quantum mechanical theory of many body systems.
 \section{Introduction}	
-Consider a system of $N$ particles described on Hilbert spaces $\h_1,\ldots,\h_N$ with Hamilton operators $h_1,\ldots,h_N$. The combined system of these particles is decribed on the Hilbert space that results from the tensor product of these one particle Hilbert spaces, that is 
+Consider a system of $N$ particles described on Hilbert spaces $\h_1,\ldots,\h_N$ with Hamilton operators $h_1,\ldots,h_N$. The combined system of these particles is decribed on the Hilbert space that results from the tensor product of these 1-particle Hilbert spaces, that is 
 \begin{equation}
 	\HH_N = \h_1\otimes\cdots\otimes\h_N\,.
 \end{equation}
@@ -203,7 +203,7 @@ In the case of free or non-interacting particles, the combined Hamilton operator
 \begin{equation}
 	D(H_N^0) \coloneq \mathrm{span}\{\phi_1\otimes\ldots\otimes\phi_N \;|\; \phi_1 \in D(h_1), \dots, \phi_N \in D(h_N)\}\,.
 \end{equation}
-On $\HH_N$, we have a natural action of the symmetric group $S_N$. That is for a $\sigma \in S_N$, we have a unitary map $U_\sigma: \HH_N \rightarrow\HH_N $ uniquely defined by its action on the tensor product. So for $\phi = \phi_1\otimes\ldots\otimes\phi_N \in \HH_N$, the $N$-particle wavefunction which is the tensor product of one particle wavefunctions, we have
+On $\HH_N$, we have a natural action of the symmetric group $S_N$. That is for a $\sigma \in S_N$, we have a unitary map $U_\sigma: \HH_N \rightarrow\HH_N $ uniquely defined by its action on the tensor product. So for $\phi = \phi_1\otimes\ldots\otimes\phi_N \in \HH_N$, the $N$-particle wavefunction which is the tensor product of 1-particle wavefunctions, we have
 \begin{equation}
 	U_\sigma \phi_1\otimes\ldots\otimes\phi_N = \phi_{\sigma^{-1}(1)} \otimes \ldots \otimes \phi_{\sigma^{-1}(N)}\,.
 \end{equation}
@@ -237,9 +237,14 @@ In general, we want to study the $N$-body Hamilton operator
 	%= \sum\limits_{i=1}^{N} \Delta_i 
 	\,.
  \end{equation}
+acting on N-particle wave function $\phi \in \HH_N$.
 
-Observe that in the definition of the $N$ particle Hilbert space, the particle number stays fixed. If we have an infinte sequence of particles, we can also consider all particle numbers at once. To this end, we introduce the Fock Hilbert space  
-Here we choose the one particle Hilbert spaces to be $L^2(\R^3)$, which gives us
+Observe that in the definition of the $N$-particle Hilbert space, the particle number stays fixed. If we have an infinte sequence of particles, we can also consider all particle numbers all at once. To this end, we introduce the Fock Hilbert space
+\begin{equation}
+	\FF = \bigoplus_{N=0}^{\infty} \h_1\otimes\cdots\otimes\h_N
+\end{equation}  
+where for $N=0$, we interpret $\h_1\otimes\cdots\otimes\h_N$ just as $\C$, being the 0-particle space. The vector $1 \in \C$ is called the vacuum vector and is denoted by $\Omega$ or $\bra{\Omega}$. The Hamilton operator on the Fock space can be written as $H=\oplus_{N=0}^{\infty}H_N$
+Here we choose the 1-particle Hilbert spaces to be $L^2(\R^3)$, which gives us
 \begin{equation}
 \HH_N = \bigotimes\limits^{N}L^2(\R^3) = L^2(\R^3)^{\otimes N} \simeq L^2(\R^{3N})\,.
 \end{equation} 
