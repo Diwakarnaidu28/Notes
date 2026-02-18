@@ -205,20 +205,20 @@ In the case of free or non-interacting particles, the combined Hamilton operator
 \end{equation}
 On $\HH_N$, we have a natural action of the symmetric group $S_N$. That is for a $\sigma \in S_N$, we have a unitary map $U_\sigma: \HH_N \rightarrow\HH_N $ uniquely defined by its action on the tensor product. So for $\phi = \phi_1\otimes\ldots\otimes\phi_N \in \HH_N$, the $N$-particle wavefunction which is the tensor product of one particle wavefunctions, we have
 \begin{equation}
-	U_\sigma \phi_1\otimes\ldots\otimes\phi_N = \phi_{\sigma^{-1}(1)} \otimes \ldots \otimes \phi_{\sigma^{-1}(N)}
+	U_\sigma \phi_1\otimes\ldots\otimes\phi_N = \phi_{\sigma^{-1}(1)} \otimes \ldots \otimes \phi_{\sigma^{-1}(N)}\,.
 \end{equation}
 This unitary map gives rise to two orthogonal projections
 \begin{equation}
-	P_+ = (N!)^{-1} \sum\limits_{\sigma \in S_N} U_\sigma , \quad  P_- = (N!)^{-1} \sum\limits_{\sigma \in S_N} \mathrm{sgn}(\sigma)U_\sigma
+	P_+ = (N!)^{-1} \sum\limits_{\sigma \in S_N} U_\sigma , \quad  P_- = (N!)^{-1} \sum\limits_{\sigma \in S_N} \mathrm{sgn}(\sigma)U_\sigma\,.
 \end{equation}
-Then the two projections $P_{\pm}$ define subspaces of $\NN_N$, i.e., the symmetric and antisymmetric tensor products\footnote{For the ease of notation, we take the particles to be identical.}
+Then the two projections $P_{\pm}$ define subspaces of $\NN_N$, i.e., the symmetric and antisymmetric tensor products
 \begin{equation}
-	\bigotimes\limits_{\mathrm{symm}}^N\h \coloneq P_+\left(\bigotimes^{N}\h\right) , \quad 
-	\bigwedge\limits^N\h \coloneq P_-\left(\bigotimes^{N}\h\right) \,.
+	\bigotimes\limits_{\mathrm{symm}}^N\h \coloneq P_+(\h_1\otimes\cdots\otimes\h_N) , \quad 
+	\bigwedge\limits^N\h \coloneq P_-(\h_1\otimes\cdots\otimes\h_N) \,.
 \end{equation}
 We also define the antisymmetric tensor product of vectors $\phi_1,\ldots,\phi_N \in \h$ as
 \begin{equation}
-	\phi_1\wedge\ldots\wedge\phi_N \coloneq (N!)^{\half}P_-(\phi_1\otimes\cdots\otimes \phi_N)
+	\phi_1\wedge\ldots\wedge\phi_N \coloneq (N!)^{\half}P_-(\phi_1\otimes\cdots\otimes \phi_N)\,.
 \end{equation}
 Without delving into the statistics, the distinguishing feature of the two species of particles, bosons and fermions, is that the $N$-particle wavefunction remains unaffected under particle permutations or picks up the sign of the permutation, respectively. Simply, for bosons, we have
 \begin{equation}
@@ -226,20 +226,19 @@ Without delving into the statistics, the distinguishing feature of the two speci
 \end{equation}
 and for fermions, we have
 \begin{equation}
-	\phi(x_1,\ldots,x_i,\ldots,x_j,\ldots,x_N) =-\phi(x_1,\ldots,x_j,\ldots,x_i,\ldots,x_N), \; \text{for} \;\phi \in \HH_N 
+	\phi(x_1,\ldots,x_i,\ldots,x_j,\ldots,x_N) =-\phi(x_1,\ldots,x_j,\ldots,x_i,\ldots,x_N), \; \text{for} \;\phi \in \HH_N \,.
 \end{equation}
 
 
 In the physical world, particle systems interact, we denote pair interaction between the particles by $V= V_{i,j}$ with all distinct combinations of $i,j \in \{1,\ldots,N\}$.
-In general we want to study the $N$-body Hamilton operator
+In general, we want to study the $N$-body Hamilton operator
 \begin{equation}
 	H_N \coloneq H_N^0 + \sum\limits_{1\leq i<j\leq N}V_{i,j} 
-	%= \sum\limits_{i=1}^{N} \Delta_i\,.
+	%= \sum\limits_{i=1}^{N} \Delta_i 
+	\,.
  \end{equation}
 
-Fock spaces
-
-
+Observe that in the definition of the $N$ particle Hilbert space, the particle number stays fixed. If we have an infinte sequence of particles, we can also consider all particle numbers at once. To this end, we introduce the Fock Hilbert space  
 Here we choose the one particle Hilbert spaces to be $L^2(\R^3)$, which gives us
 \begin{equation}
 \HH_N = \bigotimes\limits^{N}L^2(\R^3) = L^2(\R^3)^{\otimes N} \simeq L^2(\R^{3N})\,.
