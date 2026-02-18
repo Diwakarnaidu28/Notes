@@ -6,7 +6,7 @@
 \usepackage{amsthm}
 \usepackage{pgfplots, subcaption, floatrow, footnote, adjustbox,float,fancyvrb, colonequals}
 \usepackage{graphicx, grffile, epsfig, listings}
-\usepackage{verbatim, dsfont, accents}
+\usepackage{verbatim, dsfont, accents, todonotes}
 \usepackage{textcomp}
 \usepackage{pdfpages}
 
@@ -203,7 +203,7 @@ In the case of free or non-interacting particles, the combined Hamilton operator
 \begin{equation}
 	D(H_N^0) \coloneq \mathrm{span}\{\phi_1\otimes\ldots\otimes\phi_N \;|\; \phi_1 \in D(h_1), \dots, \phi_N \in D(h_N)\}\,.
 \end{equation}
-On $\HH_N$, we have a natural action of the symmetric group $S_N$. That is for a $\sigma \in S_N$, we have a unitary map $U_\sigma: \HH_N \rightarrow\HH_N $ uniquely defined by its action on the tensor product. So for $\phi = \phi_1\otimes\ldots\otimes\phi_N \in \HH_N$, the $N$-particle wavefunction which is the tensor product of 1-particle wavefunctions, we have
+On $\HH_N$, we have a natural action of the symmetric group $S_N$. That is for $\sigma \in S_N$, we have a unitary map $U_\sigma: \HH_N \rightarrow\HH_N $ uniquely defined by its action on the tensor product. So for $\phi = \phi_1\otimes\ldots\otimes\phi_N \in \HH_N$, the $N$-particle wavefunction which is the tensor product of 1-particle wavefunctions, we have
 \begin{equation}
 	U_\sigma \phi_1\otimes\ldots\otimes\phi_N = \phi_{\sigma^{-1}(1)} \otimes \ldots \otimes \phi_{\sigma^{-1}(N)}\,.
 \end{equation}
@@ -211,10 +211,10 @@ This unitary map gives rise to two orthogonal projections
 \begin{equation}
 	P_+ = (N!)^{-1} \sum\limits_{\sigma \in S_N} U_\sigma , \quad  P_- = (N!)^{-1} \sum\limits_{\sigma \in S_N} \mathrm{sgn}(\sigma)U_\sigma\,.
 \end{equation}
-Then the two projections $P_{\pm}$ define subspaces of $\NN_N$, i.e., the symmetric and antisymmetric tensor products
+Then the two projections $P_{\pm}$ define subspaces of $\HH_N$, i.e., the symmetric and antisymmetric tensor products
 \begin{equation}
-	\bigotimes\limits_{\mathrm{symm}}^N\h \coloneq P_+(\h_1\otimes\cdots\otimes\h_N) , \quad 
-	\bigwedge\limits^N\h \coloneq P_-(\h_1\otimes\cdots\otimes\h_N) \,.
+	\bigotimes\limits_{\substack{i=1\\ \mathrm{symm}}}^N\h_i \coloneq P_+(\h_1\otimes\cdots\otimes\h_N) , \quad 
+	\bigwedge\limits_{i=1}^N\h_i \coloneq P_-(\h_1\otimes\cdots\otimes\h_N) \,. \label{eq:orthoproj}
 \end{equation}
 We also define the antisymmetric tensor product of vectors $\phi_1,\ldots,\phi_N \in \h$ as
 \begin{equation}
@@ -243,10 +243,45 @@ Observe that in the definition of the $N$-particle Hilbert space, the particle n
 \begin{equation}
 	\FF = \bigoplus_{N=0}^{\infty} \h_1\otimes\cdots\otimes\h_N
 \end{equation}  
-where for $N=0$, we interpret $\h_1\otimes\cdots\otimes\h_N$ just as $\C$, being the 0-particle space. The vector $1 \in \C$ is called the vacuum vector and is denoted by $\Omega$ or $\bra{\Omega}$. The Hamilton operator on the Fock space can be written as $H=\oplus_{N=0}^{\infty}H_N$
+where for $N=0$, we interpret $\h_1\otimes\cdots\otimes\h_N$ just as $\C$, being the 0-particle space. The vector $1 \in \C$ is called the vacuum vector and is denoted by $\Omega$ or $\ket{\Omega}$. The Hamilton operator on the Fock space can be written as
+\begin{equation}
+ H=\bigoplus\limits_{N=0}^{\infty}H_N,\quad H \bigoplus_{N=0}^{\infty} \psi_N = \bigoplus_{N=0}^{\infty} H_N\psi_N, \quad \text{with}\quad H_0 = 0\,,
+\end{equation}
+with the domain
+\begin{equation}
+	D\left(H\right) = \left\{\psi = \bigoplus_{N=0}^{\infty} \psi_N\;|\; \psi_N \in D(H_N), \sum\limits_{N=0}^{\infty} \norm{H_N\psi_N}^2<\infty\right\}\,.
+\end{equation}
+The situation when particle number is fixed is referred as the canonical picture and when we consider all the possible particle number at once is reffered to as grand canonical picture.
+%Mentioning stability
+In case of identical particles, using the orthogonal projections $P_{\pm}$ from \eqref{eq:orthoproj}, we can define the bosonic and fermionic Fock space as
+\begin{align}
+	\FF^{\mathrm{B}}(\h) &\coloneq P_{+}(\FF) = \bigoplus_{N=0}^{\infty}\bigotimes^{N}_{sym} \h \,,\\
+		\FF^{\mathrm{F}}(\h) &\coloneq P_{-}(\FF) = \bigoplus_{N=0}^{\infty}\bigwedge^{N} \h \,,
+\end{align}
+with $\h$ being the 1-particle Hilbert space.
+
+\todo{Introduce the exact Hamiltonian we use with the coupling parameter}
 Here we choose the 1-particle Hilbert spaces to be $L^2(\R^3)$, which gives us
 \begin{equation}
 \HH_N = \bigotimes\limits^{N}L^2(\R^3) = L^2(\R^3)^{\otimes N} \simeq L^2(\R^{3N})\,.
 \end{equation} 
+\subsection{Second quantization}
+	\subsubsection{CCR and CCR}
+	\subsubsection{2nd Quantisation of 1 and 2-body operators}
+	\subsubsection{1 and 2-pdm}
+\subsection{Ground state of bosonic and fermionic systems}	
+\subsection{Generalized 1-pdm}
+\subsection{Bogoliubov transformation}
+\subsubsection{Implementability}\
+\subsubsection{Diagonalizing gen 1-pdm}
+\subsection{Quasi-free states and Quadratic Hamiltonians}
+\subsection{Generalized Hartree-Fock and Bogoliubov approximation}
+\subsection{Validity of Bogoliubov and Excitation spectrum of a Bose gas}
+\subsection{Going beyond Hartree-Fock and Bosonization}
+\subsection{Results from BNPSS, BPSS and CHN}
+\subsection{Motivation for Momentum distribution and BL}
+\hrule
+\subsection{Effective equations}
+\subsection{About dynamics from BPS}
 
 \end{document}
