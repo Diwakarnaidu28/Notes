@@ -274,10 +274,17 @@ They act on the 0-particle space $\C$ as $a(f)\Omega=0$ and $a(f)\Omega= f$. The
 \begin{equation}
 	a_{\pm}(f) = a(f) \quad, \quad a^*_{\pm}(f) = P_{\pm}a^*(f)\,.
 \end{equation}
-     
-\subsubsection{CCR and CCR}
-Now these creation and annihilation operators restricted to the bosonic and fermionic subspaces follow canonical commutation and canonical anti-commutator relations, respectively.
-
+    
+Now these creation and annihilation operators restricted to the bosonic and fermionic subspaces follow certain relations.
+For the bosonic creation and annihilation operators $a_{+}$ and $a^*_{+}$, we have 
+\begin{equation}\label{eq:ccr}
+	\left[a_{+}(f),a_{+}(g)\right] = \left[a^*_{+}(f),a^*_{+}(g)\right]= 0  \quad, \quad \left[a_{+}(f),a^*_{+}(g)\right] = \eva{f,g}_{\h}\,,
+\end{equation}
+the \textbf{Canonical Commutation Relations (CCR)}. And for fermionic creation and annihilation operators $a_{-}$ and $a^*_{-}$, we have 
+\begin{equation}\label{eq:car}
+	\left\{a_{-}(f),a_{-}(g)\right\} = \left\{a^*_{-}(f),a^*_{-}(g)\right\}= 0  \quad, \quad \left\{a_{-}(f),a^*_{-}(g)\right\} = \eva{f,g}_{\h}\,,
+\end{equation}
+the \textbf{Canonical Anti-commutation Relations (CAR)}.
 \subsubsection{2nd Quantisation of 1 and 2-body operators}
 \todo{Introduce the exact Hamiltonian we use with the coupling parameter}
 Here we choose the 1-particle Hilbert spaces to be $L^2(\R^3)$, which gives us
