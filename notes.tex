@@ -253,26 +253,43 @@ with the domain
 \end{equation}
 The situation when particle number is fixed is referred as the canonical picture and when we consider all the possible particle number at once is reffered to as grand canonical picture.
 %Mentioning stability
+ 
+\subsection{Second quantization}
 In case of identical particles, using the orthogonal projections $P_{\pm}$ from \eqref{eq:orthoproj}, we can define the bosonic and fermionic Fock space as
 \begin{align}
 	\FF^{\mathrm{B}}(\h) &\coloneq P_{+}(\FF) = \bigoplus_{N=0}^{\infty}\bigotimes^{N}_{sym} \h \,,\\
-		\FF^{\mathrm{F}}(\h) &\coloneq P_{-}(\FF) = \bigoplus_{N=0}^{\infty}\bigwedge^{N} \h \,,
+	\FF^{\mathrm{F}}(\h) &\coloneq P_{-}(\FF) = \bigoplus_{N=0}^{\infty}\bigwedge^{N} \h \,,
 \end{align}
-with $\h$ being the 1-particle Hilbert space.
+with $\h$ being the 1-particle Hilbert space. Subsequently, we define operators on these bosonic and fermionic Fock spaces. 
 
+For any vector $f \in \h$, we can introduce operators $a(f)$ and $a^*(f)$ on the full Fock space $\FF(\h) = \bigoplus_{N=0}^{\infty}\bigotimes^{N} \h$. The operators are defined via their action on pure tensor products
+\begin{align}
+	a(f)\left(f_1\otimes\cdots\otimes f_N\right) &= N^{\half}\eva{f,f_1}_{\h}\left(f_2\otimes\cdots\otimes f_N\right) \,,\\
+	a^*(f)\left(f_1\otimes\cdots\otimes f_N\right) &= (N+1)^{\half}\left(f\otimes f_1\otimes\cdots\otimes f_N\right)\,.
+\end{align}
+They act on the 0-particle space $\C$ as $a(f)\Omega=0$ and $a(f)\Omega= f$. They can be extended, using linearity, to $\cup_{M=0}^{\infty}\bigoplus_{N=0}^{M}\bigotimes^{N} \h$ and then these operators are densely defined in $\FF$. Here the operators map 
+\begin{equation}
+	a(f):\HH_N \rightarrow\HH_{N-1} \quad,\quad a^*(f):\HH_{N} \rightarrow\HH_{N+1}
+\end{equation} and the operator $a(f)$, the annihilation operator, is interpreted as annihilating a particle in 1-particle state $f$ and $a^*(f)$, the creation operator, creating a particle in the 1-particle state $f$. Now we define these operators on the bosonic and fermionic subspaces. For the annihilation operator, we can simply restrict it to the bosonic and fermionic subspaces and for the creation operator, we need to be careful, as we need to use the projection defined in \eqref{eq:orthoproj} to restrict to the right subspaces,
+\begin{equation}
+	a_{\pm}(f) = a(f) \quad, \quad a^*_{\pm}(f) = P_{\pm}a^*(f)\,.
+\end{equation}
+     
+\subsubsection{CCR and CCR}
+Now these creation and annihilation operators restricted to the bosonic and fermionic subspaces follow canonical commutation and canonical anti-commutator relations, respectively.
+
+\subsubsection{2nd Quantisation of 1 and 2-body operators}
 \todo{Introduce the exact Hamiltonian we use with the coupling parameter}
 Here we choose the 1-particle Hilbert spaces to be $L^2(\R^3)$, which gives us
 \begin{equation}
-\HH_N = \bigotimes\limits^{N}L^2(\R^3) = L^2(\R^3)^{\otimes N} \simeq L^2(\R^{3N})\,.
-\end{equation} 
-\subsection{Second quantization}
-	\subsubsection{CCR and CCR}
-	\subsubsection{2nd Quantisation of 1 and 2-body operators}
-	\subsubsection{1 and 2-pdm}
+	\HH_N = \bigotimes\limits^{N}L^2(\R^3) = L^2(\R^3)^{\otimes N} \simeq L^2(\R^{3N})\,.
+\end{equation}
+
+\subsubsection{1 and 2-pdm}
 \subsection{Ground state of bosonic and fermionic systems}	
 \subsection{Generalized 1-pdm}
 \subsection{Bogoliubov transformation}
-\subsubsection{Implementability}\
+\subsubsection{Implementability}
 \subsubsection{Diagonalizing gen 1-pdm}
 \subsection{Quasi-free states and Quadratic Hamiltonians}
 \subsection{Generalized Hartree-Fock and Bogoliubov approximation}
@@ -280,7 +297,8 @@ Here we choose the 1-particle Hilbert spaces to be $L^2(\R^3)$, which gives us
 \subsection{Going beyond Hartree-Fock and Bosonization}
 \subsection{Results from BNPSS, BPSS and CHN}
 \subsection{Motivation for Momentum distribution and BL}
-\hrule
+\hrule 
+\
 \subsection{Effective equations}
 \subsection{About dynamics from BPS}
 
